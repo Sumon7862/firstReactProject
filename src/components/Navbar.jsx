@@ -5,9 +5,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+    }
+
+    const handleLinkClick = (path) => {
+        setActiveLink(path);
     }
     return (
         <>
@@ -25,11 +30,51 @@ const Navbar = () => {
                     </div>
 
                     <ul className='hidden md:flex space-x-4 md:space-x-6'>
-                        <li> <Link to={'/'} className='hover:text-green-400'> Home </Link>  </li>
-                        <li> <Link to={'product'} className='hover:text-green-400'> Product </Link>  </li>
-                        <li> <Link to={'blog'} className='hover:text-green-400'> Blog </Link>  </li>
-                        <li> <Link to={'contact'} className='hover:text-green-400'> Contact </Link>  </li>
-                        <li> <Link to={'about'} className='hover:text-green-400'> About </Link>  </li>
+                        <li>
+                            <Link
+                                to={'/'}
+                                onClick={() => handleLinkClick('/')}
+                                className = {`${activeLink === '/' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                            >
+                                Home 
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to={'product'}
+                                onClick={() => handleLinkClick('product')}
+                                className = {`${activeLink === 'product' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                            >
+                                Product 
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to={'blog'}
+                                onClick={() => handleLinkClick('blog')}
+                                className = {`${activeLink === 'blog' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                            >
+                                Blog 
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to={'contact'}
+                                onClick={() => handleLinkClick('contact')}
+                                className = {`${activeLink === 'contact' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                            >
+                                Contact 
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to={'about'}
+                                onClick={() => handleLinkClick('about')}
+                                className = {`${activeLink === 'about' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                            >
+                                About 
+                            </Link>
+                        </li>
                     </ul>
 
                     <button className='hidden md:block bg-white text-black px-4 rounded cursor-pointer hover:bg-black hover:text-white'> Login </button>
