@@ -1,10 +1,11 @@
 import './App.css'
+import Root from './components/Root'
 
 function App() {
 
   return (
     <>
-      <h1> I am from BD.</h1>
+      <Root/>
     </>
   )
 }
