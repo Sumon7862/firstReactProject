@@ -21,12 +21,12 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className='bg-green-800 text-white py-3 md:py-4 sticky top-0'>
+            <nav className='bg-black/60 text-white py-3 md:py-4 fixed w-full top-0'>
                 <div className='container mx-auto flex justify-between items-center'>
                     <h3 className='text-xl font-medium'>Bikri Plus</h3>
 
                     {/* Mobile Menu Button */}
-                    <div className='md:hidden'>
+                    <div className='md:hidden ml-auto'>
                         <button onClick={toggleMenu}>
                             {
                                 isOpen ? <IoClose /> : <FaBars />
@@ -83,17 +83,17 @@ const Navbar = () => {
                     </ul>
 
                     <Link to='/login'>
-                    <button className='hidden md:block bg-white text-black px-4 rounded cursor-pointer hover:bg-black hover:text-white'> Login </button>
+                    <button className='hidden md:block bg-white text-black px-4 rounded cursor-pointer hover:bg-yellow-400 font-medium'> Login </button>
                     </Link>
 
                     {/* Mobile Menu Collapsed */}
-                    <div className={`md:hidden w-full absolute bg-green-600 top-full left-0 ${isOpen ? 'block' : 'hidden'}`}>
+                    <div className={`md:hidden w-full absolute bg-green-950 top-full left-0 ${isOpen ? 'block' : 'hidden'}`}>
                         <ul className='flex flex-col items-center py-3 space-y-2'>
-                            <li> <Link to={'/'} className='hover:text-green-900'> Home </Link>  </li>
-                            <li> <Link to={'product'} className='hover:text-green-900'> Product </Link>  </li>
-                            <li> <Link to={'blog'} className='hover:text-green-900'> Blog </Link>  </li>
-                            <li> <Link to={'contact'} className='hover:text-green-900'> Contact </Link>  </li>
-                            <li> <Link to={'about'} className='hover:text-green-900'> About </Link>  </li>
+                            <li> <Link to={'/'}> Home </Link>  </li>
+                            <li> <Link to={'product'}> Product </Link>  </li>
+                            <li> <Link to={'blog'}> Blog </Link>  </li>
+                            <li> <Link to={'contact'}> Contact </Link>  </li>
+                            <li> <Link to={'about'}> About </Link>  </li>
                             <li>
                                 <button className='bg-white text-black px-4 rounded cursor-pointer hover:bg-black hover:text-white'> Login </button>
                             </li>
