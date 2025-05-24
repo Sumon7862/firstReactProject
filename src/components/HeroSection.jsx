@@ -3,7 +3,7 @@ const HeroSection = () => {
         <>
             <div className="flex flex-col items-center justify-center text-white px-4 h-[90vh]" 
             style={{
-                backgroundImage: "url('src/assets/background.jpg')",
+                backgroundImage: "url('../src/assets/background.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
 
