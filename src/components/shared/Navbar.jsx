@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState();
+    const location = useLocation();
+
+    useEffect(() => {
+        setActiveLink(location.pathname || '/')
+    }, [location.pathname]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -41,43 +46,45 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link
-                                to={'product'}
-                                onClick={() => handleLinkClick('product')}
-                                className = {`${activeLink === 'product' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
+                                to={'/product'}
+                                onClick={() => handleLinkClick('/product')}
+                                className = {`${activeLink === '/product' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Product 
                             </Link>
                         </li>
                         <li>
                             <Link
-                                to={'blog'}
-                                onClick={() => handleLinkClick('blog')}
-                                className = {`${activeLink === 'blog' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
+                                to={'/blog'}
+                                onClick={() => handleLinkClick('/blog')}
+                                className = {`${activeLink === '/blog' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Blog 
                             </Link>
                         </li>
                         <li>
                             <Link
-                                to={'contact'}
-                                onClick={() => handleLinkClick('contact')}
-                                className = {`${activeLink === 'contact' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
+                                to={'/contact'}
+                                onClick={() => handleLinkClick('/contact')}
+                                className = {`${activeLink === '/contact' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Contact 
                             </Link>
                         </li>
                         <li>
                             <Link
-                                to={'about'}
-                                onClick={() => handleLinkClick('about')}
-                                className = {`${activeLink === 'about' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
+                                to={'/about'}
+                                onClick={() => handleLinkClick('/about')}
+                                className = {`${activeLink === '/about' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 About 
                             </Link>
                         </li>
                     </ul>
 
+                    <Link to='/login'>
                     <button className='hidden md:block bg-white text-black px-4 rounded cursor-pointer hover:bg-black hover:text-white'> Login </button>
+                    </Link>
 
                     {/* Mobile Menu Collapsed */}
                     <div className={`md:hidden w-full absolute bg-green-600 top-full left-0 ${isOpen ? 'block' : 'hidden'}`}>
