@@ -11,7 +11,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className='bg-green-800 text-white py-3 md:py-4 relative'>
+            <nav className='bg-green-800 text-white py-3 md:py-4 sticky top-0'>
                 <div className='container mx-auto flex justify-between items-center'>
                     <h3 className='text-xl font-medium'>Bikri Plus</h3>
 
@@ -36,13 +36,13 @@ const Navbar = () => {
 
                     {/* Mobile Menu Collapsed */}
                     <div className={`md:hidden w-full absolute bg-green-600 top-full left-0 ${isOpen ? 'block' : 'hidden'}`}>
-                        <ul className='flex flex-col items-center py-3'>
+                        <ul className='flex flex-col items-center py-3 space-y-2'>
                             <li> <Link to={'/'} className='hover:text-green-900'> Home </Link>  </li>
                             <li> <Link to={'product'} className='hover:text-green-900'> Product </Link>  </li>
                             <li> <Link to={'blog'} className='hover:text-green-900'> Blog </Link>  </li>
                             <li> <Link to={'contact'} className='hover:text-green-900'> Contact </Link>  </li>
                             <li> <Link to={'about'} className='hover:text-green-900'> About </Link>  </li>
-                            <li className='py-2'>
+                            <li>
                                 <button className='bg-white text-black px-4 rounded cursor-pointer hover:bg-black hover:text-white'> Login </button>
                             </li>
                         </ul>
