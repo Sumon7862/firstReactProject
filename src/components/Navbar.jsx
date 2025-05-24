@@ -34,7 +34,7 @@ const Navbar = () => {
                             <Link
                                 to={'/'}
                                 onClick={() => handleLinkClick('/')}
-                                className = {`${activeLink === '/' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                                className = {`${activeLink === '/' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Home 
                             </Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
                             <Link
                                 to={'product'}
                                 onClick={() => handleLinkClick('product')}
-                                className = {`${activeLink === 'product' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                                className = {`${activeLink === 'product' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Product 
                             </Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
                             <Link
                                 to={'blog'}
                                 onClick={() => handleLinkClick('blog')}
-                                className = {`${activeLink === 'blog' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                                className = {`${activeLink === 'blog' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Blog 
                             </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
                             <Link
                                 to={'contact'}
                                 onClick={() => handleLinkClick('contact')}
-                                className = {`${activeLink === 'contact' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                                className = {`${activeLink === 'contact' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 Contact 
                             </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
                             <Link
                                 to={'about'}
                                 onClick={() => handleLinkClick('about')}
-                                className = {`${activeLink === 'about' ? 'text-yellow-200 font-medium' : 'hover:text-green-400'}`}
+                                className = {`${activeLink === 'about' ? 'text-yellow-200 font-medium' : 'hover:text-yellow-200'}`}
                             >
                                 About 
                             </Link>
