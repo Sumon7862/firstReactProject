@@ -18,7 +18,7 @@ const Login = () => {
             <input
               className="w-full border-1 px-4 py-2 rounded focus:ring-2 focus:ring-green-950 focus:border-0"
               type="email"
-              placeholder="Email Address"
+              placeholder="Email"
               name=""
               id=""
               required
